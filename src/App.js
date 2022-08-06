@@ -4,8 +4,42 @@ const App = () => {
   // state for temperature value
   const [temperatureValue, setTemperatureValue] = useState(21);
   // state for temperature colour
-  const [temperatureColour, setTemperatureColour] = useState("neutral");
+  const [temperatureColour, setTemperatureColour] = useState("hot");
+
+  // Function to control increasing Temperature
+  const increaseTemperature = function () {
+    const newTemp = temperatureValue + 1;
+
+    if (newTemp >= 28) {
+      setTemperatureColour('hot');
+    } else if (newTemp >= 18 && newTemp <= 27) {
+      setTemperatureColour('warm');
+    } else if (newTemp >= 1 && newTemp <= 17) {
+      setTemperatureColour('cool');
+    } else if (newTemp <= 0) {
+      setTemperatureColour('cold');
+    }
+
+    setTemperatureValue(newTemp);
+  }
+
+    // Function to control decrease Temperature
+    const decreaseTemperature = function () {
+      const newTemp = temperatureValue - 1;
   
+      if (newTemp >= 28) {
+        setTemperatureColour('hot');
+      } else if (newTemp >= 18 && newTemp <= 27) {
+        setTemperatureColour('warm');
+      } else if (newTemp >= 1 && newTemp <= 17) {
+        setTemperatureColour('cool');
+      } else if (newTemp <= 0) {
+        setTemperatureColour('cold');
+      }
+  
+      setTemperatureValue(newTemp);
+    }
+
   return (
     // box containing thermometer
     <div className="app-container">
@@ -17,8 +51,8 @@ const App = () => {
       {/* container for buttons to adjust temperature */}
       <div className="button-container">
         {/* buttons */}
-        <button onClick={() => setTemperatureValue(temperatureValue + 1)}>⇧</button>
-        <button onClick={() => setTemperatureValue(temperatureValue - 1)}>⇩</button>
+        <button onClick={() => increaseTemperature()}>⇧</button>
+        <button onClick={() => decreaseTemperature()}>⇩</button>
       </div>
     </div>
   );

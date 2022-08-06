@@ -13,7 +13,7 @@ body {
   height: 400px;
   width: 300px;
   background: #2b5870;
-  border-radius: 20px;
+  border-radius: 80px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -63,7 +63,7 @@ button:focus {
   align-items: center;
 }
 
-.neutral {
+.cool {
   background: rgb(184, 184, 184);
 }
 
@@ -71,6 +71,10 @@ button:focus {
   background: #035aa6;
 }
 
+.warm {
+  background: #fba355;
+}
+
 .hot {
-  background: #ff5200;
+  background: #ff1c1c;
 }
