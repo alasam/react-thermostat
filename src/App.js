@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 const App = () => {
   // state for temperature value
-  const [temperatureValue, setTemperatureValue] = useState(0);
+  const [temperatureValue, setTemperatureValue] = useState(21);
   // state for temperature colour
-  const [temparatureColour, setTemperatureColour] = useState();
+  const [temperatureColour, setTemperatureColour] = useState("neutral");
   
   return (
     // box containing thermometer
@@ -12,7 +12,7 @@ const App = () => {
       {/* circle containing temperature value */}
       <div className="temperature-display-container">
         {/* temperature value */}
-        <div className="temperature-display">{temperatureValue}℃</div>
+        <div className={`temperature-display ${temperatureColour}`}>{temperatureValue}℃</div>
       </div>
       {/* container for buttons to adjust temperature */}
       <div className="button-container">
