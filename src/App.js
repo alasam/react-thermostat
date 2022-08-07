@@ -8,11 +8,19 @@ const App = () => {
 
   // Function to control increasing Temperature
   const increaseTemperature = function () {
+    // set max temperatureValue limit
+    if (temperatureValue === 32) {
+      alert("temperature is too high!");
+      return
+    }
+
+    // Increase temperatureValue by one
     const newTemp = temperatureValue + 1;
 
-    if (newTemp >= 28) {
+    // Set temperature colour depending on temperature value
+    if (newTemp >= 26) {
       setTemperatureColour('hot');
-    } else if (newTemp >= 18 && newTemp <= 27) {
+    } else if (newTemp >= 18 && newTemp <= 25) {
       setTemperatureColour('warm');
     } else if (newTemp >= 1 && newTemp <= 17) {
       setTemperatureColour('cool');
@@ -20,11 +28,18 @@ const App = () => {
       setTemperatureColour('cold');
     }
 
+    // Set the temperature value to the new value
     setTemperatureValue(newTemp);
   }
 
     // Function to control decrease Temperature
     const decreaseTemperature = function () {
+    // set min temperatureValue limit
+    if (temperatureValue === -10) {
+      alert("temperature is too low!");
+      return
+    }
+      
       const newTemp = temperatureValue - 1;
   
       if (newTemp >= 28) {
